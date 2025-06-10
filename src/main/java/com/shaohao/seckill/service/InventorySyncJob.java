@@ -2,6 +2,7 @@ package com.shaohao.seckill.service;
 
 import com.shaohao.seckill.entity.Inventory;
 import com.shaohao.seckill.mapper.InventoryMapper;
+import com.xxl.job.core.handler.annotation.XxlJob;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ public class InventorySyncJob {
     @Autowired
     private InventoryMapper inventoryMapper;
 
+    //弃用
     @XxlJob("inventorySyncJob")
     public void syncInventory() {
         // 示例：同步 SKU 为 sku_123 的库存
